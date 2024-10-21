@@ -1,4 +1,4 @@
-import 'package:ecommerceflutter/presentation/utility/app_colors.dart';
+
 import 'package:ecommerceflutter/presentation/widgets/category_item.dart';
 import 'package:ecommerceflutter/presentation/widgets/homecarousalslider.dart';
 import 'package:ecommerceflutter/presentation/widgets/product_card.dart';
