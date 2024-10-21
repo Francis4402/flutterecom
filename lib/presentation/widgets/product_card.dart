@@ -12,6 +12,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 3,
+      surfaceTintColor: Colors.white,
       color: Colors.white,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8)
@@ -47,7 +48,7 @@ class ProductCard extends StatelessWidget {
                     maxLines: 2,
                     style: TextStyle(
                         overflow: TextOverflow.ellipsis,
-                        fontSize: 16,
+                        fontSize: 13,
                         color: Colors.grey,
                         fontWeight: FontWeight.w500),
                   ),
