@@ -6,7 +6,10 @@ import 'package:flutter_svg/svg.dart';
 class ProductCard extends StatelessWidget {
   const ProductCard({
     super.key,
+    this.showAddToWishlist = true,
   });
+
+  final bool showAddToWishlist;
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +17,7 @@ class ProductCard extends StatelessWidget {
       elevation: 3,
       surfaceTintColor: Colors.white,
       color: Colors.white,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8)
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: SizedBox(
         width: 150,
         child: Column(
@@ -29,19 +30,16 @@ class ProductCard extends StatelessWidget {
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(8),
                     topRight: Radius.circular(8),
-                  )
-              ),
+                  )),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child:
-                SvgPicture.asset(AssetsPath.productDummyImgSvg),
+                child: SvgPicture.asset(AssetsPath.productDummyImgSvg),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-
                 children: [
                   const Text(
                     'Nike Sport Shoe 320k Special Edition',
@@ -67,26 +65,43 @@ class ProductCard extends StatelessWidget {
                         ),
                         const Wrap(
                           children: [
-                            Icon(Icons.star, color: Colors.amber, size: 20,),
+                            Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                              size: 20,
+                            ),
                             Text('3.4')
                           ],
                         ),
-                        Card(
-                          color: AppColors.primaryColor,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4)
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.all(4),
-                            child: Icon(Icons.favorite_outline, size: 16, color: Colors.white,),
-                          ),
-                        )
-                      ]
-                  )
+                        _buildAddToWishButton()
+                      ])
                 ],
               ),
             )
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAddToWishButton() {
+    return Visibility(
+      visible: showAddToWishlist,
+      replacement: _getIconButton(Icons.delete_outline),
+      child: _getIconButton(Icons.favorite_outline_rounded)
+    );
+  }
+
+  Widget _getIconButton(IconData icon) {
+    return Card(
+      color: AppColors.primaryColor,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+      child: Padding(
+        padding: const EdgeInsets.all(4),
+        child: Icon(
+          icon,
+          size: 16,
+          color: Colors.white,
         ),
       ),
     );
