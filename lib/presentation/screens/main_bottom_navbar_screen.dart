@@ -46,7 +46,7 @@ class _MainBottomNavbarScreenState extends State<MainBottomNavbarScreen> {
               BottomNavigationBarItem(
                   icon: Icon(Icons.dashboard), label: 'Category'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart), label: 'Card'),
+                  icon: Icon(Icons.shopping_cart), label: 'Cart'),
               BottomNavigationBarItem(
                   icon: Icon(Icons.favorite_outline_rounded),
                   label: 'Wishlist'),
