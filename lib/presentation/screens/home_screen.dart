@@ -1,4 +1,5 @@
 
+import 'package:ecommerceflutter/presentation/state_holders/home_slider_controller.dart';
 import 'package:ecommerceflutter/presentation/widgets/category_item.dart';
 import 'package:ecommerceflutter/presentation/widgets/homecarousalslider.dart';
 import 'package:ecommerceflutter/presentation/widgets/product_card.dart';
@@ -6,6 +7,7 @@ import 'package:ecommerceflutter/presentation/widgets/section_header.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../utility/asset_path.dart';
 import '../widgets/app_bar_icon_button.dart';
@@ -19,6 +21,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController _searchTEController = TextEditingController();
+  final HomeSliderController _homeSliderController = Get.find<HomeSliderController>();
+
+  @override
+  void initState() {
+    _homeSliderController.getSliders();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

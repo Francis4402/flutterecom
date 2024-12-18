@@ -11,7 +11,7 @@ class WishButton extends StatelessWidget {
     return Visibility(
         visible: showAddToWishlist,
         replacement: _getIconButton(Icons.delete_outline),
-        child: _getIconButton(Icons.favorite_outline_rounded));;
+        child: _getIconButton(Icons.favorite_outline_rounded));
   }
 
   Widget _getIconButton(IconData icon) {

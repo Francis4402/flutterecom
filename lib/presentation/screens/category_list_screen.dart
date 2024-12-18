@@ -26,7 +26,7 @@ class _CategoryListScreenState extends State<CategoryListScreen> {
           }, icon: const Icon(Icons.arrow_back_ios_sharp)),
         ),
         body: GridView.builder(
-          itemCount: 25,
+          itemCount: 10,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 4, childAspectRatio: 0.72),
           itemBuilder: (context, index) {
